@@ -1,29 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Javascript Test</title>
   </head>
+
   <body>
-    <button id="metamask" onclick="connect()">Connect</button>
-    <script>
-      async function connect() {
-        if (typeof window.ethereum !== "undefined") {
-          try {
-            await ethereum.request({ method: "eth_requestAccounts" });
-          } catch (error) {
-            console.log(error);
-          }
-          document.getElementById("metamask").innerHTML = "Connected";
-          const accounts = await ethereum.request({ method: "eth_accounts" });
-          console.log(accounts);
-        } else {
-          document.getElementById("metamask").innerHTML =
-            "Please install MetaMask";
-        }
-      }
-    </script>
+    <button onclick="bundle.connect()">Connect</button>
+    <button onclick="bundle.execute()">Execute</button>
   </body>
+
+  <script src="./dist/bundle.js" type="text/javascript"></script>
 </html>

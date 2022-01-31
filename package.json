@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "ethers": "^5.5.3",
+    "watchify": "^4.0.0"
+  },
+  "scripts": {
+    "build": "browserify index.js --standalone bundle -o ./dist/bundle.js",
+    "watch": "watchify index.js --standalone bundle -o ./dist/bundle.js -v"
+  },
+  "devDependencies": {
+    "babelify": "^10.0.0",
+    "http-server": "^14.1.0"
+  }
+}
