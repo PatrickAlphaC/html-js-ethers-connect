@@ -68,7 +68,17 @@ yarn hardhat node
 
 This will deploy a sample contract and start a local hardhat blockchain.
 
-2. Connect your [metamask](https://metamask.io/) to your local hardhat blockchain.
+2. Update your `index.js` with the new contract address.
+
+In your `index.js` file, update the variable `contractAddress` with the address of the deployed contract. You'll see it near the top of the hardhat output.
+
+3. Rebuild
+
+```
+yarn build
+```
+
+4. Connect your [metamask](https://metamask.io/) to your local hardhat blockchain.
 
 > **PLEASE USE A METAMASK ACCOUNT THAT ISNT ASSOCIATED WITH ANY REAL MONEY.**
 > I usually use a few different browser profiles to separate my metamasks easily.
@@ -77,4 +87,15 @@ In the output of the above command, take one of the private key accounts and [im
 
 Additionally, add your localhost with chainid 31337 to your metamask.
 
-3. Hit the `Execute` button after connecting
+5. Reserve the front end with `yarn http-server`, and then hit the `Execute` button after connecting
+
+# Thank you!
+
+If you appreciated this, feel free to follow me or donate!
+
+ETH/Polygon/Avalanche/etc Address: 0x9680201d9c93d65a3603d2088d125e955c73BD65
+
+[![Patrick Collins Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/PatrickAlphaC)
+[![Patrick Collins YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/channel/UCn-3f8tw_E1jZvhuHatROwA)
+[![Patrick Collins Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrickalphac/)
+[![Patrick Collins Medium](https://img.shields.io/badge/Medium-000000?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@patrick.collins_58673/)

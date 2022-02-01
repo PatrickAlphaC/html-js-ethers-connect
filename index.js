@@ -7,11 +7,12 @@ async function connect() {
     } catch (error) {
       console.log(error);
     }
-    document.getElementById("metamask").innerHTML = "Connected";
+    document.getElementById("connectButton").innerHTML = "Connected";
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);
   } else {
-    document.getElementById("metamask").innerHTML = "Please install MetaMask";
+    document.getElementById("connectButton").innerHTML =
+      "Please install MetaMask";
   }
 }
 
@@ -107,6 +108,8 @@ async function execute() {
         type: "function",
       },
     ];
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
     const contract = new ethers.Contract(contractAddress, abi, signer);
     try {
       await contract.store(42);
@@ -114,7 +117,8 @@ async function execute() {
       console.log(error);
     }
   } else {
-    document.getElementById("metamask").innerHTML = "Please install MetaMask";
+    document.getElementById("executeButton").innerHTML =
+      "Please install MetaMask";
   }
 }
 
