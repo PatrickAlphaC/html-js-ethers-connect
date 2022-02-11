@@ -63,6 +63,7 @@ Make sure you have the following installed:
 ```
 git clone https://github.com/PatrickAlphaC/hardhat-simple-storage
 cd hardhat-simple-storage
+yarn
 yarn hardhat node
 ```
 
