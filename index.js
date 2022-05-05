@@ -1,4 +1,14 @@
-const { ethers } = require("ethers");
+// Use ES6 import in place of `require` to make it natively compatible with browser; no browserify needed
+// Just download the minified ethers.js file from here: https://cdn.ethers.io/lib/ethers-5.6.esm.min.js
+import { ethers } from "./ethers-5.6.esm.min.js";
+
+// Assign event handlers to buttons (in place of unfavorable inline JS script in HTML elements)
+// this still works even if you decide to use browserify eventually (and no need `modules.export`!)
+const connectButton = document.getElementById("connectButton");
+const executeButton = document.getElementById("executeButton");
+
+connectButton.onclick = connect;
+executeButton.onclick = execute;
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
@@ -7,18 +17,17 @@ async function connect() {
     } catch (error) {
       console.log(error);
     }
-    document.getElementById("connectButton").innerHTML = "Connected";
+    connectButton.innerHTML = "Connected";
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);
   } else {
-    document.getElementById("connectButton").innerHTML =
-      "Please install MetaMask";
+    connectButton.innerHTML = "Please install MetaMask";
   }
 }
 
 async function execute() {
   if (typeof window.ethereum !== "undefined") {
-    contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
     const abi = [
       {
         inputs: [
@@ -117,12 +126,6 @@ async function execute() {
       console.log(error);
     }
   } else {
-    document.getElementById("executeButton").innerHTML =
-      "Please install MetaMask";
+    executeButton.innerHTML = "Please install MetaMask";
   }
 }
-
-module.exports = {
-  connect,
-  execute,
-};
