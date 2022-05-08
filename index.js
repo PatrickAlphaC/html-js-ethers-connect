@@ -1,4 +1,9 @@
-const { ethers } = require("ethers");
+'use strict';
+
+window.onload = () => {
+  document.querySelector('#connectButton').addEventListener('click', connect);
+  document.querySelector('#executeButton').addEventListener('click', execute);
+}
 
 async function connect() {
   if (typeof window.ethereum !== "undefined") {
@@ -7,18 +12,18 @@ async function connect() {
     } catch (error) {
       console.log(error);
     }
-    document.getElementById("connectButton").innerHTML = "Connected";
+
+    document.querySelector("#connectButton").innerHTML = "Connected";
+
     const accounts = await ethereum.request({ method: "eth_accounts" });
     console.log(accounts);
   } else {
-    document.getElementById("connectButton").innerHTML =
-      "Please install MetaMask";
-  }
+    document.querySelector("#connectButton").innerHTML = "Please install MetaMask"; }
 }
 
 async function execute() {
   if (typeof window.ethereum !== "undefined") {
-    contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+    const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
     const abi = [
       {
         inputs: [
@@ -108,21 +113,17 @@ async function execute() {
         type: "function",
       },
     ];
+
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(contractAddress, abi, signer);
+
     try {
       await contract.store(42);
     } catch (error) {
       console.log(error);
     }
   } else {
-    document.getElementById("executeButton").innerHTML =
-      "Please install MetaMask";
+    document.querySelector("#executeButton").innerHTML = "Please install MetaMask";
   }
 }
-
-module.exports = {
-  connect,
-  execute,
-};
