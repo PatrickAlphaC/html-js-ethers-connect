@@ -1,13 +1,18 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
   <head>
     <title>Javascript Test</title>
+    <script type="module">
+      import { connect, execute } from './index';
+
+      document.querySelector('#connectButton').addEventListener('click', connect);
+      document.querySelector('#executeButton').addEventListener('click', execute);
+    </script>
   </head>
 
   <body>
-    <button id="connectButton" onclick="bundle.connect()">Connect</button>
-    <button id="executeButton" onclick="bundle.execute()">Execute</button>
+    <button id="connectButton">Connect</button>
+    <button id="executeButton">Execute</button>
   </body>
-
-  <script src="./dist/bundle.js" type="text/javascript"></script>
 </html>

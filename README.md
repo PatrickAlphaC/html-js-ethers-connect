@@ -13,7 +13,7 @@ A small html file to show how to connect with metamask from the front-end. This 
   - You'll know you've installed npm right if you can run:
     - `npm --version` And get an ouput like `x.x.x`
     - You might need to install it with npm
-- [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
+- Optional: [Yarn](https://classic.yarnpkg.com/lang/en/docs/install/) instead of `npm`
   - You'll know you've installed yarn right if you can run:
     - `yarn --version` And get an output like: `x.x.x`
     - You might need to install it with npm
@@ -27,6 +27,11 @@ A small html file to show how to connect with metamask from the front-end. This 
 ```
 git clone https://github.com/PatrickAlphaC/front-end-metamask-button
 cd front-end-metamask-button
+
+npm i
+```
+or
+```
 yarn
 yarn build
 ```
@@ -34,11 +39,20 @@ yarn build
 2. Serve the file
 
 ```
+npm dev
+```
+or 
+```
 yarn http-server
 ```
 
 And you'll see an output like:
 
+```
+vite v2.9.8 dev server running at:
+  > Local: http://localhost:3000/
+```
+or
 ```
 Available on:
   http://127.0.0.1:8080
