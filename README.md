@@ -2,6 +2,13 @@
 
 A small html file to show how to connect with metamask from the front-end. This is a minimalistic example what you can find in the [metamask docs](https://docs.metamask.io/guide/create-dapp.html#basic-action-part-1).
 
+You can also check out the following editions for working with es6 syntax:
+
+```
+git checkout raw-js
+git checkout vitejs
+```
+
 # Requirements
 
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
