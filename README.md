@@ -25,8 +25,9 @@ A small html file to show how to connect with metamask from the front-end. This 
 1. Clone the repo, install dependencies, and create the build.
 
 ```
-git clone https://github.com/PatrickAlphaC/front-end-metamask-button
-cd front-end-metamask-button
+git clone https://github.com/PatrickAlphaC/html-js-ethers-connect
+cd html-js-ethers-connect
+git checkout raw-js
 yarn
 yarn build
 ```
